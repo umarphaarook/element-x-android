@@ -7,11 +7,19 @@
     <item quantity="one">"%1$d ciffer indtastet"</item>
     <item quantity="other">"%1$d cifre indtastet"</item>
   </plurals>
+  <string name="a11y_edit_avatar">"Redigér avatar"</string>
+  <string name="a11y_edit_room_address_hint">"Den fulde adresse vil være %1$s"</string>
+  <string name="a11y_encryption_details">"Krypteringsoplysninger"</string>
   <string name="a11y_hide_password">"Skjul adgangskode"</string>
   <string name="a11y_join_call">"Deltag i opkald"</string>
   <string name="a11y_jump_to_bottom">"Hop til bunden"</string>
+  <string name="a11y_move_the_map_to_my_location">"Flyt kortet til min lokation"</string>
   <string name="a11y_notifications_mentions_only">"Kun omtaler"</string>
   <string name="a11y_notifications_muted">"Lyd slået fra"</string>
+  <string name="a11y_notifications_new_mentions">"Nye omtaler"</string>
+  <string name="a11y_notifications_new_messages">"Nye beskeder"</string>
+  <string name="a11y_notifications_ongoing_call">"Igangværende opkald"</string>
+  <string name="a11y_other_user_avatar">"Anden brugers avatar"</string>
   <string name="a11y_page_n">"Side %1$d"</string>
   <string name="a11y_pause">"Pausér"</string>
   <string name="a11y_paused_voice_message">"Talebesked, varighed: %1$s, aktuel position: %2$s"</string>
@@ -30,15 +38,20 @@
   <string name="a11y_read_receipts_tap_to_show_all">"Tryk for at vise alle"</string>
   <string name="a11y_remove_reaction">"Fjern reaktion med%1$s"</string>
   <string name="a11y_remove_reaction_with">"Fjern reaktion med %1$s"</string>
+  <string name="a11y_room_avatar">"Avatar for rummet"</string>
   <string name="a11y_send_files">"Send filer"</string>
   <string name="a11y_show_password">"Vis adgangskode"</string>
   <string name="a11y_start_call">"Start et opkald"</string>
+  <string name="a11y_time_limited_action_required">"Tidsbegrænset handling påkrævet"</string>
+  <string name="a11y_tombstoned_room">"Deaktiveret rum"</string>
+  <string name="a11y_user_avatar">"Avatar for bruger"</string>
   <string name="a11y_user_menu">"Brugermenu"</string>
   <string name="a11y_view_avatar">"Se avatar"</string>
   <string name="a11y_view_details">"Se detaljer"</string>
   <string name="a11y_voice_message">"Talebesked, varighed: %1$s"</string>
   <string name="a11y_voice_message_record">"Optag talebesked."</string>
   <string name="a11y_voice_message_stop_recording">"Stop optagelsen"</string>
+  <string name="a11y_your_avatar">"Din avatar"</string>
   <string name="action_accept">"Accepter"</string>
   <string name="action_add_caption">"Tilføj billedtekst"</string>
   <string name="action_add_to_timeline">"Føj til tidslinje"</string>
@@ -97,6 +110,7 @@
   <string name="action_no">"Nej"</string>
   <string name="action_not_now">"Ikke nu"</string>
   <string name="action_ok">"OK"</string>
+  <string name="action_open_context_menu">"Åbn kontekstmenu"</string>
   <string name="action_open_settings">"Indstillinger"</string>
   <string name="action_open_with">"Åbn med"</string>
   <string name="action_pin">"Fastgør"</string>
@@ -121,7 +135,9 @@
   <string name="action_save">"Gem"</string>
   <string name="action_search">"Søg"</string>
   <string name="action_send">"Send"</string>
+  <string name="action_send_edited_message">"Send redigeret besked"</string>
   <string name="action_send_message">"Send besked"</string>
+  <string name="action_send_voice_message">"Send talebesked"</string>
   <string name="action_share">"Del"</string>
   <string name="action_share_link">"Del link"</string>
   <string name="action_show">"Vis"</string>
@@ -137,6 +153,7 @@
   <string name="action_tap_for_options">"Tryk for indstillinger"</string>
   <string name="action_try_again">"Prøv igen"</string>
   <string name="action_unpin">"Frigør"</string>
+  <string name="action_view">"Vis"</string>
   <string name="action_view_in_timeline">"Se i tidslinjen"</string>
   <string name="action_view_source">"Se kilde"</string>
   <string name="action_yes">"Ja"</string>
@@ -238,6 +255,7 @@
     <item quantity="one">"%d stemme"</item>
     <item quantity="other">"%d stemmer"</item>
   </plurals>
+  <string name="common_preparing">"Forbereder…"</string>
   <string name="common_privacy_policy">"Privatlivspolitik"</string>
   <string name="common_reaction">"Reaktion"</string>
   <string name="common_reactions">"Reaktioner"</string>
@@ -300,7 +318,7 @@
   <string name="common_verification_complete">"Bekræftelse fuldført"</string>
   <string name="common_verification_failed">"Verifikation mislykkedes"</string>
   <string name="common_verified">"Verificeret"</string>
-  <string name="common_verify_device">"Bekræft enhed"</string>
+  <string name="common_verify_device">"Verificér enhed"</string>
   <string name="common_verify_identity">"Verificér identitet"</string>
   <string name="common_verify_user">"Verificér bruger"</string>
   <string name="common_video">"Video"</string>
@@ -353,14 +371,18 @@ Er du sikker på, at du vil fortsætte?"</string>
   <string name="invite_friends_text">"Hej, lad os snakkes på %1$s: %2$s"</string>
   <string name="login_initial_device_name_android">"%1$s Android"</string>
   <string name="preference_rageshake">"Ryst enheden i frustration for at anmelde en fejl"</string>
+  <string name="screen_bug_report_a11y_screenshot">"Skærmbillede"</string>
   <string name="screen_create_poll_option_accessibility_label">"%1$s: %2$s"</string>
   <string name="screen_create_poll_options_section_title">"Valgmuligheder"</string>
   <string name="screen_create_poll_remove_accessibility_label">"Fjern %1$s"</string>
   <string name="screen_create_poll_settings_section_title">"Indstillinger"</string>
   <string name="screen_media_picker_error_failed_selection">"Det lykkedes ikke at vælge medie. Prøv igen."</string>
   <string name="screen_media_upload_preview_caption_warning">"Billedtekster er muligvis ikke synlige for personer, der bruger ældre apps."</string>
+  <string name="screen_media_upload_preview_error_could_not_be_uploaded">"Filen kunne ikke uploades."</string>
   <string name="screen_media_upload_preview_error_failed_processing">"Det lykkedes ikke at behandle medier til upload. Prøv venligst igen."</string>
   <string name="screen_media_upload_preview_error_failed_sending">"Upload af medier mislykkedes. Prøv igen."</string>
+  <string name="screen_media_upload_preview_error_too_large_message">"Den maksimalt tilladte filstørrelse er %1$s ."</string>
+  <string name="screen_media_upload_preview_error_too_large_title">"Filen er for stor til at kunne uploades."</string>
   <string name="screen_pinned_timeline_empty_state_description">"Tryk på en besked og vælg \"%1$s\" for at inkludere den her."</string>
   <string name="screen_pinned_timeline_empty_state_headline">"Fastgør vigtige beskeder, så de let kan opdages"</string>
   <plurals name="screen_pinned_timeline_screen_title">

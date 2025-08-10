@@ -49,7 +49,6 @@ import io.element.android.features.home.impl.roomlist.RoomListDeclineInviteMenu
 import io.element.android.features.home.impl.roomlist.RoomListEvents
 import io.element.android.features.home.impl.roomlist.RoomListState
 import io.element.android.features.home.impl.search.RoomListSearchView
-import io.element.android.features.leaveroom.api.LeaveRoomView
 import io.element.android.features.networkmonitor.api.ui.ConnectivityIndicatorContainer
 import io.element.android.libraries.androidutils.throttler.FirstThrottler
 import io.element.android.libraries.designsystem.preview.ElementPreview
@@ -78,8 +77,9 @@ fun HomeView(
     onMenuActionClick: (RoomListMenuAction) -> Unit,
     onReportRoomClick: (roomId: RoomId) -> Unit,
     onDeclineInviteAndBlockUser: (roomSummary: RoomListRoomSummary) -> Unit,
-    modifier: Modifier = Modifier,
     acceptDeclineInviteView: @Composable () -> Unit,
+    modifier: Modifier = Modifier,
+    leaveRoomView: @Composable () -> Unit,
 ) {
     val state: RoomListState = homeState.roomListState
     val coroutineScope = rememberCoroutineScope()
@@ -108,7 +108,7 @@ fun HomeView(
                 )
             }
 
-            LeaveRoomView(state = state.leaveRoomState)
+            leaveRoomView()
 
             HomeScaffold(
                 state = homeState,
@@ -240,14 +240,20 @@ private fun HomeScaffold(
                         contentPadding = PaddingValues(
                             // FAB height is 56dp, bottom padding is 16dp, we add 8dp as extra margin -> 56+16+8 = 80,
                             // and include provided bottom padding
-                            bottom = 80.dp + padding.calculateBottomPadding(),
-                            top = padding.calculateTopPadding()
+                            // Disable contentPadding due to navigation issue using the keyboard
+                            // See https://issuetracker.google.com/issues/436432313
+                            bottom = 80.dp,
+                            // bottom = 80.dp + padding.calculateBottomPadding(),
+                            // top = padding.calculateTopPadding()
                         ),
                         modifier = Modifier
                             .padding(
                                 PaddingValues(
                                     start = padding.calculateStartPadding(LocalLayoutDirection.current),
                                     end = padding.calculateEndPadding(LocalLayoutDirection.current),
+                                    // Remove these two lines once https://issuetracker.google.com/issues/436432313 has been fixed
+                                    bottom = padding.calculateBottomPadding(),
+                                    top = padding.calculateTopPadding()
                                 )
                             )
                             .consumeWindowInsets(padding)
@@ -274,13 +280,11 @@ private fun HomeScaffold(
         floatingActionButton = {
             if (state.displayActions) {
                 FloatingActionButton(
-                    containerColor = ElementTheme.colors.iconPrimary,
-                    onClick = onCreateRoomClick
+                    onClick = onCreateRoomClick,
                 ) {
                     Icon(
                         imageVector = CompoundIcons.Plus(),
                         contentDescription = stringResource(id = R.string.screen_roomlist_a11y_create_message),
-                        tint = ElementTheme.colors.iconOnSolidPrimary,
                     )
                 }
             }
@@ -306,5 +310,6 @@ internal fun HomeViewPreview(@PreviewParameter(HomeStateProvider::class) state: 
         onMenuActionClick = {},
         onDeclineInviteAndBlockUser = {},
         acceptDeclineInviteView = {},
+        leaveRoomView = {}
     )
 }
